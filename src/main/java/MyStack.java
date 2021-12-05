@@ -47,7 +47,11 @@ public class MyStack {
     }
 
     public boolean isFull() {
-        return (top == size - 1);
+        try {
+            return (top == size - 1);} catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("full");
+        }
+        return false;
     }
 }
 
