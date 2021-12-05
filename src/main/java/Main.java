@@ -6,12 +6,13 @@ public class Main {
         stack.addElement(3);
         stack.deleteElement();
         System.out.println("__________________________________");
+        System.out.println("top element is "+stack.readTop());
+        System.out.println("__________________________________");
         System.out.println("stack is full? "+stack.isFull());
         System.out.println("__________________________________");
         System.out.println("stack is empty? "+stack.isEmpty());
         System.out.println("__________________________________");
         System.out.println("size of stack = "+stack.getSize());
-        System.out.println("__________________________________");
     }
 }
 

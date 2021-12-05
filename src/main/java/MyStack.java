@@ -19,11 +19,17 @@ public class MyStack implements Stackable {
     }
 
     public void addElement(int element) {
-        if (isFull()) {
-            System.out.println("Stack is full!!!");
-        } else {
-            array[++top] = element;
-            System.out.println("After add element {" + array[top] + "} top is " + top);
+        try {
+
+
+            if (isFull()) {
+                System.out.println("Stack is full!!!");
+            } else {
+                array[++top] = element;
+                System.out.println("After add element {" + array[top] + "} top is " + top);
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("stack is full!!!!!");
         }
     }
 
@@ -47,12 +53,9 @@ public class MyStack implements Stackable {
     }
 
     public boolean isFull() {
-        try {
-            return (top == size - 1);
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("full");
-        }
-        return false;
+
+        return (top == size - 1);
+
     }
 }
 
