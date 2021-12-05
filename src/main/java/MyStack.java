@@ -1,4 +1,4 @@
-public class MyStack {
+public class MyStack implements Stackable {
 
     private final int size; //mSize - максимальный размер
     private final int[] array;
@@ -48,7 +48,8 @@ public class MyStack {
 
     public boolean isFull() {
         try {
-            return (top == size - 1);} catch (ArrayIndexOutOfBoundsException e){
+            return (top == size - 1);
+        } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("full");
         }
         return false;
