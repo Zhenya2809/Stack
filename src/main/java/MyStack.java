@@ -1,3 +1,5 @@
+import java.util.Optional;
+
 public class MyStack implements Stackable {
 
     private final int size; //mSize - максимальный размер
@@ -29,16 +31,26 @@ public class MyStack implements Stackable {
 
     }
 
-    public void deleteElement() throws StackIsEmptyException {
-        if (isEmpty()) {
-            throw new StackIsEmptyException("Stack is empty");
-        } else {
-            System.out.println("Delete element {" + array[top] + "}  top is " + top);
-            top--;
-
-        }
+//    public void deleteElement() throws StackIsEmptyException {
+//        if (isEmpty()) {
+//            Optional.empty();
+//            throw new StackIsEmptyException("Stack is empty");
+//        } else {
+//            System.out.println("Delete element {" + array[top] + "}  top is " + top);
+//            Optional.of(top--);
+//
+//
+//        }x
+//    }
+public Optional<Integer> deleteElement() throws StackIsEmptyException {
+    if (isEmpty()) {
+            Optional.empty();
+        throw new StackIsEmptyException("Stack is empty");
+    } else {
+        System.out.println("Delete element {" + array[top] + "}  top is " + top);
+        return Optional.of(top--);
     }
-
+}
     public int readTop() {
         if (isEmpty()) {
             System.out.println("Top is " + top);

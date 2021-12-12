@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Optional;
+
 public class TestStack {
     @Test
     void shouldCreateStack() {
@@ -55,5 +57,17 @@ public class TestStack {
         Assertions.assertEquals(stackIsEmptyException.getMessage(), "Stack is empty");
 
     }
+    @Test
+    void testOption() throws StackIsEmptyException, StackIfFullException {
+        //given
+        MyStack mStack = new MyStack(3);
+        mStack.addElement(4);
+        mStack.addElement(4);
+        //when
+        Optional<Integer> stack=mStack.deleteElement();
+        stack.ifPresent(System.out::println);
+
+    }
+
 
 }
