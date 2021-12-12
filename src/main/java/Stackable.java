@@ -1,7 +1,7 @@
 public interface Stackable {
-    void addElement(int element);
+    void addElement(int element) throws StackIfFullException;
 
-    void deleteElement();
+    void deleteElement() throws StackIsEmptyException;
 
     boolean isEmpty();
 

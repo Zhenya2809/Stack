@@ -1,5 +1,5 @@
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class TestStack {
     @Test
@@ -10,7 +10,7 @@ public class TestStack {
     }
 
     @Test
-    void testDeleteElement() {
+    void testDeleteElement() throws StackIsEmptyException, StackIfFullException {
         MyStack mStack = new MyStack(5);
 
         mStack.addElement(5);
@@ -24,27 +24,35 @@ public class TestStack {
     }
 
     @Test
-    void testAddElement() {
+    void testAddElement() throws StackIfFullException {
         MyStack mStack = new MyStack(5);
         mStack.addElement(5);
         Assertions.assertEquals(5, mStack.readTop());
     }
 
+
     @Test
-    void testFullStack() {
-        MyStack mStack = new MyStack(3);
-        mStack.addElement(5);
-        mStack.addElement(6);
-        mStack.addElement(7);
-        mStack.addElement(8);
-        Assertions.assertTrue(mStack.isFull());
+    public void testFullStack() throws StackIfFullException {
+        //given
+        MyStack mStack = new MyStack(1);
+        mStack.addElement(4);
+        //when
+        StackIfFullException stackIfFullException = Assertions.assertThrows(
+                StackIfFullException.class, () -> mStack.addElement(7));
+        //then
+        Assertions.assertEquals(stackIfFullException.getMessage(), "Stack if full");
 
     }
 
     @Test
     void testEmptyStack() {
-        MyStack mStack = new MyStack(3);
-        Assertions.assertTrue(mStack.isEmpty());
+        //given
+        MyStack mStack = new MyStack(1);
+        //when
+        StackIsEmptyException stackIsEmptyException = Assertions.assertThrows(
+                StackIsEmptyException.class, mStack::deleteElement);
+        //then
+        Assertions.assertEquals(stackIsEmptyException.getMessage(), "Stack is empty");
 
     }
 

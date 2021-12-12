@@ -4,38 +4,34 @@ public class MyStack implements Stackable {
     private final int[] array;
     private int top; //какой по счету елемент сверху (индекс последнего элемента)
 
-    public int getSize() {
-        return size;
-    }
-
     public MyStack(int s) {
         size = s;
         array = new int[size];
         top = -1;
     }
 
+    public int getSize() {
+        return size;
+    }
+
     public boolean isEmpty() {  //если =-1 то стек только создан, если >-1 то значит что то уже лежит в нём
         return (top == -1);
     }
 
-    public void addElement(int element) {
-        try {
-
+    public void addElement(int element) throws StackIfFullException {
 
             if (isFull()) {
-                System.out.println("Stack is full!!!");
+                throw new StackIfFullException("Stack if full");
             } else {
                 array[++top] = element;
                 System.out.println("After add element {" + array[top] + "} top is " + top);
             }
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("stack is full!!!!!");
-        }
+
     }
 
-    public void deleteElement() {
+    public void deleteElement() throws StackIsEmptyException {
         if (isEmpty()) {
-            System.out.println("Stack is empty. Top is " + top);
+            throw new StackIsEmptyException("Stack is empty");
         } else {
             System.out.println("Delete element {" + array[top] + "}  top is " + top);
             top--;

@@ -1,18 +1,13 @@
 public class Main {
-    public static void main(String[] args) {
-        MyStack stack = new MyStack(5);
+    public static void main(String[] args) throws StackIsEmptyException, StackIfFullException {
+        MyStack stack = new MyStack(4);
         stack.addElement(5);
         stack.addElement(1);
         stack.addElement(3);
         stack.deleteElement();
-        System.out.println("__________________________________");
-        System.out.println("top element is " + stack.readTop());
-        System.out.println("__________________________________");
-        System.out.println("stack is full? " + stack.isFull());
-        System.out.println("__________________________________");
-        System.out.println("stack is empty? " + stack.isEmpty());
-        System.out.println("__________________________________");
-        System.out.println("size of stack = " + stack.getSize());
+        stack.deleteElement();
+        stack.deleteElement();
+        stack.deleteElement();
     }
 }
 
