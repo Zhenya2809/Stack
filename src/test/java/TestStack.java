@@ -56,6 +56,7 @@ public class TestStack {
         Optional<Integer> stack = mStack.deleteElement();
         Assertions.assertEquals(Optional.empty(), stack);
         Assertions.assertTrue(stack.isEmpty());
+        Assertions.assertTrue(stack.isEmpty());
     }
 
     @Test

@@ -42,14 +42,14 @@ public class MyStack implements Stackable {
 //
 //        }x
 //    }
-    public Optional<Integer> putElement() throws StackIsEmptyException {
-        if (isEmpty()) {
-            throw new StackIsEmptyException("Stack is empty");
-        } else {
-            System.out.println("Delete element {" + array[top] + "}  top is " + top);
-            return Optional.of(top--);
-        }
-    }
+//    public Optional<Integer> putElement() throws StackIsEmptyException {
+//        if (isEmpty()) {
+//            throw new StackIsEmptyException("Stack is empty");
+//        } else {
+//            System.out.println("Delete element {" + array[top] + "}  top is " + top);
+//            return Optional.of(top--);
+//        }
+//    }
 
     public Optional<Integer> deleteElement() {
         if (isEmpty()) {
