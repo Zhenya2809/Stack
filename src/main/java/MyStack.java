@@ -22,16 +22,16 @@ public class MyStack implements Stackable {
 
     public void addElement(int element) throws StackIfFullException {
 
-            if (isFull()) {
-                throw new StackIfFullException("Stack if full");
-            } else {
-                array[++top] = element;
-                System.out.println("After add element {" + array[top] + "} top is " + top);
-            }
+        if (isFull()) {
+            throw new StackIfFullException("Stack if full");
+        } else {
+            array[++top] = element;
+            System.out.println("After add element {" + array[top] + "} top is " + top);
+        }
 
     }
 
-//    public void deleteElement() throws StackIsEmptyException {
+    //    public void deleteElement() throws StackIsEmptyException {
 //        if (isEmpty()) {
 //            Optional.empty();
 //            throw new StackIsEmptyException("Stack is empty");
@@ -42,15 +42,22 @@ public class MyStack implements Stackable {
 //
 //        }x
 //    }
-public Optional<Integer> deleteElement() throws StackIsEmptyException {
-    if (isEmpty()) {
-            Optional.empty();
-        throw new StackIsEmptyException("Stack is empty");
-    } else {
-        System.out.println("Delete element {" + array[top] + "}  top is " + top);
-        return Optional.of(top--);
+    public Optional<Integer> putElement() throws StackIsEmptyException {
+        if (isEmpty()) {
+            throw new StackIsEmptyException("Stack is empty");
+        } else {
+            System.out.println("Delete element {" + array[top] + "}  top is " + top);
+            return Optional.of(top--);
+        }
     }
-}
+
+    public Optional<Integer> deleteElement() {
+        if (isEmpty()) {
+            return Optional.empty();
+        }
+        return Optional.of(array[top--]);
+    }
+
     public int readTop() {
         if (isEmpty()) {
             System.out.println("Top is " + top);

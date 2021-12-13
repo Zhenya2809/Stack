@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1379afd3-3913-4854-8964-6ec7424d60d1" name="Changes" comment="test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MyStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MyStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Stackable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Stackable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestStack.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,7 +132,21 @@
       <option name="project" value="LOCAL" />
       <updated>1639333200180</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="test">
+      <created>1639340267724</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1639340267724</updated>
+    </task>
+    <task id="LOCAL-00008" summary="test">
+      <created>1639340280818</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1639340280818</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

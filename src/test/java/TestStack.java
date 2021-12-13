@@ -51,21 +51,23 @@ public class TestStack {
         //given
         MyStack mStack = new MyStack(1);
         //when
-        StackIsEmptyException stackIsEmptyException = Assertions.assertThrows(
-                StackIsEmptyException.class, mStack::deleteElement);
-        //then
-        Assertions.assertEquals(stackIsEmptyException.getMessage(), "Stack is empty");
 
+        //then
+        Optional<Integer> stack = mStack.deleteElement();
+        Assertions.assertEquals(Optional.empty(), stack);
+        Assertions.assertTrue(stack.isEmpty());
     }
+
     @Test
-    void testOption() throws StackIsEmptyException, StackIfFullException {
+    void testOption() throws StackIfFullException {
         //given
         MyStack mStack = new MyStack(3);
         mStack.addElement(4);
         mStack.addElement(4);
         //when
-        Optional<Integer> stack=mStack.deleteElement();
+        Optional<Integer> stack = mStack.deleteElement();
         stack.ifPresent(System.out::println);
+
 
     }
 
